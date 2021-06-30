@@ -6,7 +6,8 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-        <MoodEntryComponent />
+        <MoodEntryComponent initialMood="I'm happy"/>
+        <MoodEntryComponent initialMood="I'm so sad!"/>
     </SafeAreaView>
   );
 }
