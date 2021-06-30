@@ -13,11 +13,11 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-        <FlatList
+        {false && <FlatList
           renderItem={renderItem}
           data={moods}
           keyExtractor={mood => mood.id}
-        />
+        />}
     </SafeAreaView>
   );
 }
