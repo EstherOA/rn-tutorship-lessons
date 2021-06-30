@@ -1,14 +1,16 @@
-import React from 'react';
-import { View, TextInput, StyleSheet, Alert } from 'react-native';
+import React, { useState } from 'react';
+import { View, TextInput, StyleSheet } from 'react-native';
 
 export default function MoodEntryComponent() {
+    const [text, setText] = useState('');
     
     return (
         <View style={styles.inputContainer}>
             <TextInput
                 placeholder="Enter your mood"
                 style={styles.textInput}
-                onChangeText={text => console.log(text)}
+                onChangeText={setText}
+                value={text}
             />
         </View>
     )
