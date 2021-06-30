@@ -29,17 +29,13 @@ const CardComponent = () => {
 export default CardComponent;
 
 const styles = StyleSheet.create({
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    textAlign: 'center',
-  },
   cardView: {
     marginHorizontal: 20,
     elevation: 3,
     backgroundColor: '#f2f2f2',
     borderRadius: 10,
     overflow: 'hidden',
+    marginBottom: 20
   },
   headerView: {
     backgroundColor: 'darkgreen',
