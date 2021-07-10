@@ -1,13 +1,28 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import {View, Text, StyleSheet, Alert} from 'react-native';
 
 const CardComponent = props => {
-  const {title} = props;
+  const [stateTitle, setStateTitle] = useState(props.title);
+  const [bgColor, setBgColor] = useState(colors[0]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setStateTitle("Updated state");
+      setBgColor(getRandomColor(colors))
+    }, 3000);
+  }, [props.title]); //dependencies array - customize render behaviour
+
+  useEffect(() => {
+    console.log("One time");
+    return () => handleCleanup;
+  }, []); //one-time effect (mounts, unmounts);
+
+  const handleCleanup = () => Alert.alert("Unmounted");
 
   return (
     <View
-      style={[styles.cardContainer, {backgroundColor: getRandomColor(colors)}]}>
-      <Text style={styles.text}>{title}</Text>
+      style={[styles.cardContainer, {backgroundColor: bgColor}]}>
+      <Text style={styles.text}>{stateTitle}</Text>
     </View>
   );
 };

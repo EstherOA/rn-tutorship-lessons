@@ -19,7 +19,7 @@ export default function MoodEntryComponent(props) {
 
 const styles = StyleSheet.create({
     inputContainer: {
-        backgroundColor: '#f2f2f2',
+        backgroundColor: '#fce846',
         height: 50,
         paddingHorizontal: 10,
         justifyContent: 'center',
